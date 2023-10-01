@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rohan
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rohan
+  template:
+    metadata:
+      labels:
+        app: rohan
+    spec:
+      containers:
+        - name: rohan
+          image: rohan-248001
+          ports:
+            - containerPort: 80
