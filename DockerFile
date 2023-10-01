@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+# Install Apache2
+RUN apt-get update && apt-get install -y apache2
+
+# Replace default page with custom index.html
+COPY index.html /var/www/html/
+
+# Expose port
+EXPOSE 80
+
+# Start Apache2
+CMD ["apache2ctl", "-D", "FOREGROUND"]
